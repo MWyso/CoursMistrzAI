@@ -1,0 +1,47 @@
+Zadanie dodatkowe nr 2
+
+Problem:
+Na bazie dowolnego problemu w zdobywaniu wiedzy (np nauka nowej technologii, języka, skilla) przez osobę nieświadomą złożoności tego zadania przygotuje:
+Rozbije dla rozmówcy problem na mniejsze, bardziej zjadliwe kroki
+Przygotuje dla rozmówcy listę największych wyzwań, z którymi będzie mierzyć się osoba, która chce zdobyć wiedzę
+Przygotuje dla rozmówcy 5/10/20-dniowy plan działania
+
+Rozwiązanie:
+3 prompty posiadające jak największą część wspólną
+
+Input:
+Jeden problem rozmówcy - problemy mogą być dowolne np:
+Jak nauczyć się nowej technologii
+Jak założyć firmę
+Jak rozpocząć sprzedaż na Amazonie
+Jak zostać programistą no-code
+
+Output:
+W zależności od prompta:
+Lista kroków, które trzeba zrobić, aby zdobyć nową wiedzę
+Diagnoza problemu z listą największych wyzwań oraz podstawą wnioskowania (dlaczego LLM wybrał właśnie to)
+Plan działania w celu dojścia do celu (do wyboru 5, 10, 20 dni)
+
+----------------------------------------
+
+System:
+
+Jesteś inteligentnym $SYSTEMEM_AI do pisania $PLANU.
+Na podstawie informacji od $UŻYTKOWNIKA w input.
+Twoim zadaniem jest rozbić problem na mniejsze kroki, przygotować listę wyzwań, przygotować plan działania
+Stwórz $PLAN wykorzystując zawsze strukturę $STRUKTURA_PLANU= `
+{
+"diagnoza problemu": string,
+"lista kroków": string[],
+"największe wyzwania": string[],
+"plan 5 dniowy": string[],
+"plan 10 dniowy": string[],
+"plan 20 dniowy": string[],
+
+
+User:
+
+Jak nauczyć się nowej technologii
+Jak założyć firmę
+Jak rozpocząć sprzedaż na Amazonie
+Jak zostać programistą no-code
