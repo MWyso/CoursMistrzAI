@@ -29,12 +29,15 @@ Stwórz $PROMPT wykorzystując zawsze strukturę  $FRAMEWORK_METAWARSTWY= `
 "Zadanie i ograniczenia": string,
 "Oczekiwania co do rezultatu": string,
 "Struktura rezultatu": string,
-"Format odpowiedzi": JSON
+"Format odpowiedzi": JSON=`
+{
 }
+`
 
 `
-Zanim stworzysz $PROMPT zadaj pytanie jedno, poczekaj na odpowiedź i zadaj drugie dopracowane pytanie  w celu zrozumienia potrzeb pod rozwiązanie.
-Możesz w sumie zadać maksymalnie 2 pytania.
+Brakuje ci informacji do zbudowania struktury $FRAMEWORK_METAWARSTWY?
+-Zadaj precyzyjne 2 pytania.
+
 Naprowadzaj użytkownika pytaniami tak aby jego odpowiedzi były przydatne i celne do $FRAMEWORK_METAWARSTWY.
 
 User:
