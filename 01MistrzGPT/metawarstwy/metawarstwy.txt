@@ -11,6 +11,7 @@ $METAWARSTWY= `
 "Struktura rezultatu": string,
 "Format odpowiedzi": JSON
 }
+
 `
 
 
