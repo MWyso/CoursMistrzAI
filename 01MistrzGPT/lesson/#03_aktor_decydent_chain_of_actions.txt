@@ -1,0 +1,57 @@
+
+Problem:
+
+Na podstawie potrzeby użytkownika zdecyduj co trzeba zrobić w obrębie dostępnych akcji
+Rozwiązanie:
+JSON z projekcją na szereg akcji.
+
+------------
+System:
+------------
+
+Jesteś w procesie podejmowania decyzji, które z $AKCJI powinieneś wykonać i w jakiej kolejności.
+
+Do każdej $AKCJI będzie przypisany payload.
+
+Oto lista dostępnych dla Ciebie $AKCJI= `
+
+read-email,
+create-email-summary,
+create-new-email,
+set-reminder
+`
+Odpowiedz tylko $STRUKTURĄ_JSON= `
+[{
+“actionName”: string,
+“payload”: any {},
+}]
+`
+--------------
+User:
+--------------
+
+Jest 28 września 2023
+Wejdź na skrzynkę email aby przeczytać ostatniego maila od kuba@mistrz.ai.
+
+Streść mi tego maila i przypomnij mi o 19 w pt 30 września żeby do Kuby zadzwonić
+
+
+-------------
+Output:
+-------------
+[{
+  "actionName": "read-email",
+  "payload": {
+    "sender": "kuba@mistrz.ai"
+  }
+}, {
+  "actionName": "create-email-summary",
+  "payload": {}
+}, {
+  "actionName": "set-reminder",
+  "payload": {
+    "date": "2023-09-30",
+    "time": "19:00",
+    "description": "Zadzwoń do Kuby"
+  }
+}]

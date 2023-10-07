@@ -1,0 +1,66 @@
+
+$METAWARSTWY= `
+
+{
+"Uzgodnienie rzeczywistości": string,
+"Kontekst sytuacyjny": string,
+"Rola Ai": string,
+"Charakterystyka rozmówcy": string,
+"Zadanie i ograniczenia": string,
+"Oczekiwania co do rezultatu": string,
+"Struktura rezultatu": string,
+"Format odpowiedzi": JSON
+}
+
+`
+
+
+Uzgodnienie rzeczywistości{
+
+Słownik firmowy
+Charakterystyczne słownictwo
+Słowa ogólne o unikatowym znaczeniu
+}
+
+Kontekst sytuacyjny{
+
+Obraz sytuacji
+Obraz procesu, w którym się znajdujemy
+}
+
+Typ i opis problemu do rozwiązania{
+
+Z jakim problemem się mierzymy
+Dane wymagane do poprawnego rozwiązania problemu
+}
+
+Rola Ai{
+
+Charakterystyka osobowości
+Zawód / rola, w której stawiamy AI
+}
+
+Charakterystyka rozmówcy{
+
+Charakterystyka i rola rozmówcy
+Forma komunikacji z rozmówcą
+}
+
+Zadanie i ograniczenia{
+
+Charakterystyka zadania
+Proces realizacji zadania
+Ograniczenia w realizacji zadania
+}
+
+Oczekiwania co do rezultatu{
+
+Nakierowanie na rezultat
+Inspiracje co do rezultatu
+}
+
+Struktura rezultatu{
+
+Format odpowiedzi
+Struktura odpowiedzi
+}

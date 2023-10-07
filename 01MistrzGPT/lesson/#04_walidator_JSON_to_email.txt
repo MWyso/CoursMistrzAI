@@ -1,0 +1,114 @@
+
+Problem:
+
+Na podstawie maila i wsadu JSON sprawdź czy email zawiera wszystkie informacje
+
+-----------
+System:
+-----------
+
+Pracujesz dla firmy MistrzAi i nazywasz się Tomcio Paluch.
+
+Jesteś osobą , czytającą  $MAILA z ponagleniem płatności od $DŁUŻNIKA.
+Otrzymasz napisanego $MAILA oraz dane $DŁUŻNIKA i zaległości
+Twoim zadaniem jest sprawdzić za pomocą STRUKTURY_JSON czy $MAIL jest poprawnie napisany i zawiera prawdziwe dane, oraz ustaloną strukture.
+Napisz maila wg poniższej struktury
+Przywitaj się grzecznie
+Spytaj się czy w firmie coś złego się dzieje
+Przypomnij, że jest zaległa płatność
+Opowiedz o potencjalnych krokach sądowych w przypadku dalszego zalegania z płatnością
+Podziękuj za szybką załatwienie sprawy
+Odpowiedz tylko $STRUKTURA_JSON =`
+{
+ "section": {
+"grzecznePowitanie": boolean,
+"spytanieStanFirmy": boolean,
+"przypomnienieZaległejPłatności"; boolean,
+ "informacjaKrokachSądowych": boolean,
+"podziękowanie": boolean
+},
+„personIsSame”: boolean,  // czy imię i nazwisko są takie same
+„companyIsSame”: boolean,
+„invoiceIsSame”: boolean
+}
+`
+
+----------
+User:
+----------
+
+Oto dane $DŁUŻNIKA=`
+`
+Oto napisany $MAIL=`
+`
+Odpowiedz tylko $STRUKTURĄ_JSON
+
+
+------------
+P1
+------------
+
+Dane $DŁUŻNIKA = `
+
+{
+  "invoice": {
+    "code": "12-13/23",
+    "dueDate": "2023-08-25",
+    "amountDue": 20000,
+    "latePaymentDays": 14
+  },
+  "customer": {
+    "id": "random-generated-id",
+    "name": "Janusz",
+    "email": "Janusz-email@example.com",
+    "company": {
+      "id": "random-company-id",
+      "name": "random-company-name",
+      "address": "random-company-address"
+    },
+    "service": {
+      "id": "random-service-id",
+      "description": "Programming services",
+      "status": "Overdue"
+    }
+  }
+}
+
+`
+
+Oto napisany $MAIL=`
+Szanowny Panie Arkadiuszu,
+
+Pragnę zwrócić Pana uwagę na fakt, że w ostatnim czasie nie odnotowaliśmy żadnej wpłaty z Pańskiej strony. Czy coś złego dzieje się w Pańskiej firmie?
+
+Chciałbym przypomnieć, że istnieje zaległa płatność dotycząca faktury o numerze 12-13/23. Termin płatności upłynął w dniu 25 sierpnia 2023 roku. Aktualnie mamy 14 dni opóźnienia. Prosimy o jak najszybsze uregulowanie tej kwoty w wysokości 23000 zł.
+
+Pragnę podkreślić, że w przypadku dalszego zalegania z płatnością będziemy zmuszeni podjąć kroki prawne lub sądowe w celu odzyskania należności. Chcemy uniknąć takiego rozwoju wypadków i mieć nadzieję, że rozwiązanie tej sprawy będzie możliwe w sposób pokojowy i bez konieczności angażowania instytucji zewnętrznych.
+
+Bardzo prosimy o szybkie uregulowanie zaległości, aby uniknąć dalszych konsekwencji. Liczymy na Pańską odpowiedzialność i zrozumienie sytuacji.
+
+Dziękujemy za uwagę i liczymy na szybkie załatwienie tej sprawy.
+
+Z poważaniem,
+
+Tomcio Paluch
+MistrzAi
+`
+Odpowiedz tylko $STRUKTURĄ_JSON
+
+-------------------
+Output:
+-------------------
+
+{
+ "section": {
+"grzecznePowitanie": true,
+"spytanieStanFirmy": true,
+"przypomnienieZaległejPłatności": true,
+ "informacjaKrokachSądowych": true,
+"podziękowanie": true
+},
+"personIsSame": false,
+"companyIsSame": true,
+"invoiceIsSame": true
+}

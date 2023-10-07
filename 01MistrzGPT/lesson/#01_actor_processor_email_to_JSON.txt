@@ -1,0 +1,72 @@
+Problem:
+Na podstawie dowolnego maila z naszej skrzynki firmowej stwórz leada.
+Rozwiązanie:
+·         Struktura JSON
+·         Dane osobowe, firma, problem
+
+-------------
+System:
+-------------
+
+Pracujesz dla firmy MistrzAi.
+Jesteś w procesie ekstrakcji danych z $MAILA do $STRUKTURY_JSON
+Jesteś wirtualnym asystentem, który będzie czytać podanego $MAILA i wyciągnąć z niego niezbędne firmie informacje.
+Skup się tylko na wyciągnięciu informacji wg podanej $STRUKTURY_JSON= `
+{
+„daneOsobowe”: string,
+„firma”: string,
+„problemyJakieOsobaZMailaMaDoRozwiązania”: [{
+“name”:string,
+“mainProblem”:string
+}],
+„krótkieStreszczenieMaila”: string
+}
+`
+
+--------------
+User:
+--------------
+
+Otrzymujesz do analizy $MAILA= `
+Szanowni Państwo,
+
+Nazywam się Jan Nowak i jestem menedżerem ds. rozwoju w firmie XYZ Solutions, specjalizującej się w produkcji komponentów elektronicznych. Zwracam się do Państwa z prośbą o pomoc w rozwiązaniu kilku problemów, z którymi borykamy się na co dzień, poprzez wdrożenie systemów sztucznej inteligencji.
+
+Mamy kilka kluczowych kwestii, które chcielibyśmy poprawić za pomocą nowoczesnych technologii:
+
+Optymalizacja procesów produkcyjnych i redukcja odpadów.
+Wydajniejsze zarządzanie zasobami ludzkimi oraz planowanie zmian.
+Automatyzacja procesów magazynowych.
+Analiza danych klientów w celu lepszego dostosowania oferty produktowej.
+Jesteśmy zainteresowani dowiedzeniem się więcej na temat możliwości, jakie oferuje Państwa firma, oraz jakie są potencjalne koszty takiego projektu.
+
+Dane kontaktowe:
+Jan Nowak
+Menedżer ds. Rozwoju
+XYZ Solutions
+E-mail: jan.nowak@xyzsolutions.com
+Tel: +48 123 456 789
+
+
+`
+Odpowiedz poprawnie wypełnioną $STRUKTURĄ_JSON.
+
+------------
+Output
+------------
+
+{
+"daneOsobowe": "Jan Nowak",
+"firma": "XYZ Solutions",
+"problemyJakieOsobaZMailaMaDoRozwiązania": [
+{
+"name": "Optymalizacja procesów produkcyjnych i redukcja odpadów",
+"mainProblem": "Wydajniejsze zarządzanie zasobami ludzkimi oraz planowanie zmian"
+},
+{
+"name": "Automatyzacja procesów magazynowych",
+"mainProblem": "Analiza danych klientów w celu lepszego dostosowania oferty produktowej"
+}
+],
+"krótkieStreszczenieMaila": "Zwracam się do Państwa z prośbą o pomoc w rozwiązaniu kilku problemów, z którymi borykamy się na co dzień, poprzez wdrożenie systemów sztucznej inteligencji."
+}
